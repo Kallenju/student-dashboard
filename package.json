@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "description": "This pet project is a highly simplified 'CRM'. The form for adding students is being validated. There is a form for searching and filtering students. When you click on the header of a table column, the records are sorted.",
+  "scripts": {
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "prettier": "prettier --check  --config ./.prettierrc.js ./**/*.js",
+    "prettier:fix": "prettier --write --config ./.prettierrc.js ./**/*.js"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "eslint": "8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

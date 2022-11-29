@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web page with student data control panel.">
+  <title>Student Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.png">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script type="module" src="./scripts/main.js"></script>
+</head>
+<body class="bg-light">
+  <header class="mb-3 bg-primary shadow-sm">
+    <div class="container-fluid-with-paddings pt-3 pb-3">
+      <div class="row">
+        <div class="col-12">
+          <a class="d-inline-flex align-items-center link-light text-decoration-none" href="./index.html">
+            <img class="mw-logo me-3" src="./images/logo/logo-inverted.png" alt="university logo">
+            <span>Some University</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="mb-3">
+    <section>
+      <div class="container-fluid-with-paddings">
+        <div class="row pb-3">
+          <h1 class="mb-3 p-0">Student Dashboard</h1>
+          <form class="p-3 border rounded bg-white shadow-sm" action="#" name="studentformForCreating">
+            <fieldset class="row mb-3 align-items-start">
+              <legend class="h3">Form for adding a new student</legend>
+              <div class="col-xxl-2 col-md-4 col-sm-6 col-12">
+                <label class="form-label" for="addStudentLastName">
+                  Surname
+                </label>
+                <input id="addStudentLastName" class="form-control" type="text" name="lastName">
+              </div>
+              <div class="col-xxl-2 col-md-4 col-sm-6 col-12">
+                <label class="form-label" for="addStudentFirstName">
+                  Name
+                </label>
+                <input id="addStudentFirstName" class="form-control" type="text" name="firstName">
+              </div>
+              <div class="col-xxl-2 col-md-4 col-sm-6 col-12">
+                <label class="form-label" for="addStudentMiddleName">
+                  Middle name (if any)
+                </label>
+                <input id="addStudentMiddleName" class="form-control" type="text" name="middleName">
+              </div>
+              <div class="col-xxl-2 col-md-4 col-sm-6 col-12">
+                <label class="form-label" for="addStudentFaculty">
+                  Faculty
+                </label>
+                <input id="addStudentFaculty" class="form-control" type="text" name="faculty">
+              </div>
+              <div class="col-xxl-2 col-md-4 col-sm-6 col-12">
+                <label class="form-label" for="addStudentDateOfBirth">
+                  Date of Birth
+                </label>
+                <input id="addStudentDateOfBirth" class="form-control" type="date" name="dateOfBirth">
+              </div>
+              <div class="col-xxl-2 col-md-4 col-sm-6 col-12">
+                <label class="form-label" for="addStudentStartDate">
+                  Year of start of study
+                </label>
+                <input id="addStudentStartDate" class="form-control" type="number" name="startDate">
+              </div>
+            </fieldset>
+            <button class="btn btn-primary" type="submit">Add</button>
+          </form>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-12 mb-xl-0 mb-3 ps-xl-0 pe-xl-2 p-0">
+            <div class="p-3 border rounded bg-white shadow-sm">
+              <h2 class="h3 mb-3">Student Search Panel</h2>
+              <form class="mb-3" action="#" name="studentSearchForm">
+                <fieldset>
+                  <legend class="h5 mb-3">Quick search</legend>
+                  <label class="form-label visually-hidden" for="simpleSearch">Search by exact match</label>
+                  <input id="simpleSearch" class="form-control" type="text" name="simpleSearch">
+                </fieldset>
+              </form>
+              <div class="d-xl-block d-flex flex-wrap justify-content-start align-items-start" data-name="filtersSwitches">
+                <span class="h5 mb-3 w-100">Selecting fields to filter</span>
+                <div class="form-check form-switch mb-3 pe-3">
+                  <input id="switchStudentLastName" class="form-check-input" type="checkbox" name="lastName" role="switch">
+                  <label class="form-check-label" for="switchStudentLastName">Last name</label>
+                </div>
+                <div class="form-check form-switch mb-3 pe-3">
+                  <input id="switchStudentFirstame" class="form-check-input" type="checkbox" name="firstName" role="switch">
+                  <label class="form-check-label" for="switchStudentFirstame">First name</label>
+                </div>
+                <div class="form-check form-switch mb-3 pe-3">
+                  <input id="switchStudentMiddleName" class="form-check-input" type="checkbox" name="middleName" role="switch">
+                  <label class="form-check-label" for="switchStudentMiddleName">Middle name</label>
+                </div>
+                <div class="form-check form-switch mb-3 pe-3">
+                  <input id="switchStudentFaculty" class="form-check-input" type="checkbox" name="faculty" role="switch">
+                  <label class="form-check-label" for="switchStudentFaculty">Faculty</label>
+                </div>
+                <div class="form-check form-switch mb-3 pe-3">
+                  <input id="switchStudentStartDate" class="form-check-input" type="checkbox" name="startDate" role="switch">
+                  <label class="form-check-label" for="switchStudentStartDate">Year of start of study</label>
+                </div>
+                <div class="form-check form-switch pe-3">
+                  <input id="switchStudentEndDate" class="form-check-input" type="checkbox" name="endDate" role="switch">
+                  <label class="form-check-label" for="switchStudentEndDate">Year of end of study</label>
+                </div>
+              </div>
+              <span data-name="filterPlug">No fields selected for filtering yet!</span>
+              <form action="#" name="studentFilters">
+                <fieldset>
+                  <legend class="visually-hidden">Selecting fields to filter</legend>
+                  <div class="mb-3 visually-hidden">
+                    <label class="form-label" for="filterStudentLastName">
+                      Last name
+                    </label>
+                    <input id="filterStudentLastName" class="form-control" type="text" name="lastName">
+                  </div>
+                  <div class="mb-3 visually-hidden">
+                    <label class="form-label" for="filterStudentFirstName">
+                      First name
+                    </label>
+                    <input id="filterStudentFirstName" class="form-control" type="text" name="firstName">
+                  </div>
+                  <div class="mb-3 visually-hidden">
+                    <label class="form-label" for="filterStudentMiddleName">
+                      Middle name
+                    </label>
+                    <input id="filterStudentMiddleName" class="form-control" type="text" name="middleName">
+                  </div>
+                  <div class="mb-3 visually-hidden">
+                    <label class="form-label" for="filterStudentFaculty">
+                      Faculty
+                    </label>
+                    <input id="filterStudentFaculty" class="form-control" type="text" name="faculty">
+                  </div>
+                  <div class="mb-3 visually-hidden">
+                    <label class="form-label" for="filterStudentStartDate">
+                      Year of start of study
+                    </label>
+                    <input id="filterStudentStartDate" class="form-control" type="number" name="startDate">
+                  </div>
+                  <div class="visually-hidden">
+                    <label class="form-label" for="filterStudentEndDate">
+                      Year of end of study
+                    </label>
+                    <input id="filterStudentEndDate" class="form-control" type="number" name="endDate">
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="col-xl-9 col-12 pe-xl-0 ps-xl-2 p-0">
+            <div class="table-responsive p-3 border rounded bg-white shadow-sm">
+              <table id="studentsInTable" class="table table-hover caption-top m-0">
+                <caption class="h3">Table with student data</caption>
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-center" scope="col">Student name</th>
+                        <th class="text-center" scope="col">Faculty</th>
+                        <th class="text-center" scope="col">Date of Birth</th>
+                        <th class="text-center" scope="col">Years of study</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-secondary">
+    <div class="container-fluid-with-paddings pt-3 pb-3">
+      <div class="row">
+        <div class="col-6">
+          <a class="d-inline-flex align-items-center link-light text-decoration-none" href="./index.html">
+            <img class="mw-logo me-3" src="./images/logo/logo-inverted.png" alt="university logo">
+            <span>Some University</span>
+          </a>
+        </div>
+        <div class="col-6 d-flex justify-content-end align-items-center">
+          <small class="text-center align-middle">
+            <a class="link-light text-decoration-none small" href="https://www.flaticon.com/free-icons/university" title="university icons">
+              University icons created by Nikita Golubev - Flaticon
+            </a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
